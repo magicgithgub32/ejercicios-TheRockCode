@@ -40,8 +40,11 @@
         </fieldset>
 
         <fieldset>
-          <legend>Mobile phone number</legend>
-          <input type="tel" name="mobile_number" id="mobile_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
+          <div>
+          <label for"telNo'>Mobile phone number(xxx-xxx-xxx):</label>
+          <input type="tel" name="mobile_number" id="mobile_number" required pattern="[0-9]{3}[0-9]{3}-[0-9]{3} /">
+          <span class="validity"></span>
+          </div>
         </fieldset>
 
         <fieldset>
@@ -70,53 +73,72 @@
         </header>
         <fieldset>
           <legend>True / False, with a default choice</legend>
-          <input type="checkbox" checked="True" disabled="False">
-          <!-- The server is expecting a choice between `true` and `false` only. Set it to `true` by default. -->
+          <label><input type="checkbox" checked="checked" name="True_False" disabled="disabled">True</label>
         </fieldset>
+
         <fieldset>
           <legend>Confirm</legend>
-          <!-- The server is expecting a specific name/value pair of `confirm=true` that the user can confirm, or nothing in its place. -->
           <input type="checkbox" name="confirm" value="true">
         </fieldset>
+
         <fieldset>
           <legend>Yes or No</legend>
-          <!-- The server is expecting a value of `yes`, or `no` for the `agree` field. -->
+          <div>
+            <input type="radio" id="Yes" name="Yes_or_No" value="Yes" checked>
+            <label for="Yes">Yes</label>
+          </div>
+          <div>
+            <input type="radio" id="No" name="Yes_or_No" value="No">
+            <label for="No">No</label>
+          </div>
         </fieldset>
+
         <div>
           <button type="submit" name="form" value="booleans">Send</button>
         </div>
       </form>
 
+
       <form action="#form_single" method="GET" id="form_single">
+
         <header>
           <h2>Single choice from a set of options</h2>
         </header>
+
         <fieldset>
           <legend>Small list of values</legend>
-          <!--
-            The server is expecting one of the following values for `fruit`:
 
-              - `apples`: Apples
-              - `bananas`: Bananas
-              - `grapes`: Grapes
-              - `plums`: Plums
-          -->
+          <label for="fruit">Select your favourite fruit</label>
+
+          <select name="fruit" id="fruit">
+            <option value="apples">Apples</option>
+            <option value="bananas">Bananas</option>
+            <option value="grapes">Grapes</option>
+            <option value="plums">Plums</option>
+          </select>
+
         </fieldset>
+
         <fieldset>
           <legend>Large list of values</legend>
-          <!--
-            The server is expecting one of the following values for `birds`:
-
-              - `duck`: Ducks
-              - `eagle`: Eagles
-              - `heron`: Herons
-              - `gull`: Gulls
-              - `pigeon`: Pigeons
-              - `raven`: Ravens
-              - `robin`: Robins
-              - `swallow`: Swallows
-          -->
+          <label>Select your favourite bird</label>
+        <form id="birds">
+          <select width=300 style="width: 350px"
+            size="8" single>
+            <option value="duck">Ducks</option>
+            <option value="eagle">Eagles</option>
+            <option value="heron">Herons</option>
+            <option value="gull">Gulls</option>
+            <option value="pigeon">Pigeons</option>
+            <option value="raven">Ravens</option>
+            <option value="robin">Robins</option>
+            <option value="swallow">Swallows</option>
+          </select>
+          <input type="submit">
+        </form>
+        
         </fieldset>
+
         <div>
           <button type="submit" name="form" value="single">Send</button>
         </div>
@@ -128,59 +150,62 @@
         </header>
         <fieldset>
           <legend>Small list of values</legend>
-          <!--
-            The server is expecting one or more of the following values for `fruit`:
-
-              - `apples`: Apples
-              - `bananas`: Bananas
-              - `grapes`: Grapes
-              - `plums`: Plums
-          -->
+          <label>Select your favourite fruits</label>
+          <select name="fruit" id="fruit" multiple>
+            <option value="apples">Apples</option>
+            <option value="bananas">Bananas</option>
+            <option value="grapes">Grapes</option>
+            <option value="plums">Plums</option>
+          </select>
         </fieldset>
+
         <fieldset>
           <legend>Large list of values</legend>
-          <!--
-            The server is expecting one or more of the following values for `birds`:
-
-              - `duck`: Ducks
-              - `eagle`: Eagles
-              - `heron`: Herons
-              - `gull`: Gulls
-              - `pigeon`: Pigeons
-              - `raven`: Ravens
-              - `robin`: Robins
-              - `swallow`: Swallows
-          -->
+            <label>Select your favourite birds</label>
+          <form id="birds">
+            <select width=300 style="width: 350px"
+              size="8" multiple>
+              <option value="duck">Ducks</option>
+              <option value="eagle">Eagles</option>
+              <option value="heron">Herons</option>
+              <option value="gull">Gulls</option>
+              <option value="pigeon">Pigeons</option>
+              <option value="raven">Ravens</option>
+              <option value="robin">Robins</option>
+              <option value="swallow">Swallows</option>
+            </select>
+            <input type="submit">
+          </form>
+          
         </fieldset>
         <div>
           <button type="submit" name="form" value="multiple">Send</button>
         </div>
       </form>
 
-      <form action="#form_other" method="GET" id="form_other" enctype="multipart/form-data">
+      <form action="#form_other" method="get" id="form_other" enctype="multipart/form-data">
         <header>
           <h2>Other form fields</h2>
         </header>
         <fieldset>
           <legend>Hidden</legend>
-          <!--
-            The server is expecting a hidden `signed=true` pair here.
-          -->
+          <input type="hidden" id="signed" name="signed" value="true">
+          <input tyoe="submit"value="signed">
         </fieldset>
+
         <fieldset>
           <legend>File(s)</legend>
-          <!--
-            The server is expecting at least one file here, with the name of `photos`.
-          -->
+          <input type="file" id="photos" accept=".jpg,.jpeg,.png"/>
         </fieldset>
+
         <fieldset>
           <legend>Range</legend>
-          <!--
-            The server is expecting at a numerical value for `bearing` between 0 and 359
-          -->
-        </fieldset>
+          <input type="number" id="range" min="0" max="359">
+          </fieldset>
+
         <fieldset>
           <legend>Colour</legend>
+          <input type="colour">
           <!--
             The server is expecting at a colour value for `background_colour`
           -->
