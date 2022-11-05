@@ -30,32 +30,35 @@
           <h2>Text entry</h2>
         </header>
         <fieldset>
-          <legend>Simple text: Nickname</legend>
+          <legend>Nickname</legend>
           <input type="text" name="nickname" id="nickname" required>
-          <!-- The server is expecting plain text here with the `name` of `nickname`. Linebreaks aren't allowed. -->
         </fieldset>
+
         <fieldset>
-          <legend>Multi-line Text: Biography</legend>
-          <input type="textarea" name="biography" id="biography">
-          <!-- The server is expecting paragraphs of text here to act as the `biography` field. Linebreaks need to be saved. -->
+          <legend>Biography</legend>
+          <textarea name="textarea" rows="10" cols="50">Write about you here</textarea>
         </fieldset>
+
         <fieldset>
           <legend>Mobile phone number</legend>
-          <input type="number" name="mobile number" id="mobile number" minlength="9" maxlength="9">
-          <!-- The server is expecting the user's `mobile_phone` here. -->
+          <input type="tel" name="mobile_number" id="mobile_number" pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}">
         </fieldset>
+
         <fieldset>
           <legend>Website</legend>
-          <!-- The server is expecting the user's `website` address here. -->
+          <input type="url" name="website" id="website" value="http://www.example.com">
         </fieldset>
+
         <fieldset>
           <legend>Date of birth</legend>
-          <!-- The server is expecting the user's `date_of_birth` here. -->
+          <input type="date">
         </fieldset>
+
         <fieldset>
           <legend>Age</legend>
-          <!-- The server is expecting the user's `age` in years here. -->
+          <input type="number" id="age" name="age" min="01" max="99">
         </fieldset>
+
         <div>
           <button type="submit" name="form" value="text">Send</button>
         </div>
@@ -67,6 +70,7 @@
         </header>
         <fieldset>
           <legend>True / False, with a default choice</legend>
+          <input type="checkbox" checked="True" disabled="False">
           <!-- The server is expecting a choice between `true` and `false` only. Set it to `true` by default. -->
         </fieldset>
         <fieldset>
