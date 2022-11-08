@@ -1,0 +1,11 @@
+@font-face {
+	font-family: "Mi nueva fuente";
+	src: url(./assets/Fonts/Kolker_Brush/KolkerBrush-Regular.ttf); format("truetype");
+	font-weight: normal;
+	font-style: normal;
+}
+
+.myTitle {
+	font-family: "Mi nueva fuente";
+	
+}
