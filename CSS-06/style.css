@@ -10,12 +10,13 @@ h1 {
 
 .image-container {
   width: 100%;
-  box-shadow: 10px 5px 5px rgba(0,0,0,5) 
+  
 }
 
 img {
-  display: block;
-  margin: auto;
+    display: block;
+    margin: auto;
+  box-shadow: 10px 5px 5px rgba(0,0,0,5);
     
 }
 
