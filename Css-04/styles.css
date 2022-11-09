@@ -6,7 +6,7 @@
 
 body {
     background-image: url("https://www.transparenttextures.com/patterns/always-grey.png");
-    overflow-block:
+    overflow-x: hidden;
 }
 
 h1 {
