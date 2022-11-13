@@ -6,6 +6,7 @@ div {
   margin: 10px;
   padding: 10px;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 p {
@@ -15,6 +16,7 @@ p {
   margin: 10px;
   padding: 10px;
   display: inline-block;
+  box-sizing: border-box;
 }
 
 span {
@@ -24,6 +26,7 @@ span {
   margin: 10px;
   padding: 10px;
   display: inline-block;
+  box-sizing: border-box;
   
 }
 
@@ -34,5 +37,6 @@ a {
   margin: 10px;
   padding: 10px;
   display: inline-block;
+  box-sizing: border-box;
 
 }
