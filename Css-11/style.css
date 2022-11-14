@@ -7,10 +7,12 @@
     font-family: monospace;
     background: #fa5252;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin: auto;  
-    gap: 10px;
-    border: 10px;
+    gap: 32px;
+    padding: 0 32px;
+     
   }
   
   .logo {
@@ -19,41 +21,30 @@
     color: black;
     background: green;
     padding: 4px 32px;
-    display: flex;
-    align-self: center;
-    
   }
-
-  .left-links {
-   
-    display: flex;
-    align-content: center;
-    color: violet;
-    
-  }
-
-  .right-links {
-    
-    display: flex;
-    align-content: center;
-    color: violet;
-  }
-  
 
   ul {
     /* this removes the dots on the list items*/
     list-style-type: none;
     display: flex;
-    
+    padding: 0;
+    align-items: center;
+    justify-content: space-around;
         
   }
+
+  .right-links, .left-links {
   
+    flex: 1;
+    
+  }
+  
+
   a {
     font-size: 22px;
-    background: white;
+    background: violet;
     padding: 8px;
     /* this removes the line under the links */
     text-decoration: none;
     
-
   }
