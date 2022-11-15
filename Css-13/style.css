@@ -42,7 +42,7 @@ body {
   .sidebar {
     width: 300px;
     background: royalblue;
-    margin: 16px;
+    margin: 16px;   
     
   }
 
@@ -53,12 +53,18 @@ body {
 
   }
   
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+
+  }
+  
   .card {
     border: 1px solid #eee;
     box-shadow: 2px 4px 16px rgba(0,0,0,.06);
     border-radius: 4px;
-    display: flex;
-    flex-wrap: wrap;
-    
+    width: 15em;    
+    background-color:rgb(226, 216, 216);
     
   }
