@@ -11,8 +11,11 @@ body, html {
     box-sizing: border-box;
     display: grid;
     grid-gap: 15px;
-    grid-template-columns: 100px 300px;
+    grid-template-columns: 300px 900px;
     grid-template-rows: 100px 100px 500px 100px;
+    grid-template-areas: "header header header"
+    "sidebar nav" "sidebar main"
+    "footer footer footer";
   }
   
   .container div {
