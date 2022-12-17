@@ -21,5 +21,5 @@ var summation = function summation (num) {
       return summ;
     }
 
-    console.log(summation(8))
+    console.log(summation(12))
 

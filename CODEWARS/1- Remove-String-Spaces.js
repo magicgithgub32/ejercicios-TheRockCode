@@ -10,3 +10,5 @@
 function noSpace(x){
     return x.replace(/\s/g, '');
   }
+
+  console.log(noSpace('hello, my friend'))
