@@ -6,11 +6,11 @@
 // Si te fijas en la respuesta de la api, la imagen está en la propiedad 
 // 'img' y el título en la propiedad 'name'.
 
-const BreakingBad_URL = 'https://breakingbadapi.com';
+const BB_URL = 'https://breakingbadapi.com';
 
-const searchUrl = `${BreakingBad_URL}`/characters?;    
+const searchUrl = `${BB_URL}/api/characters?`  
 
-const BBContainer = document.querySelector(".BB-container");
+const BBContainer = document.querySelector("#BB-container");
 let BBData;
 
 const renderBB = () => {
