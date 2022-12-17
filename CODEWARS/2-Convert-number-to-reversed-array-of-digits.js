@@ -5,14 +5,11 @@
   
 // }
 
-let n = 12345;
 
-function digitize(n) {
-    
-    let newString = String(n).split("").reverse().map(Number);
+function digitize(num) {
+    let newArr = num.toString().split('').reverse().map(Number);
+    return newArr;
+}
 
-    return newString;
-  }
-
-  console.log(newString)
+  console.log(digitize(12345))
 
