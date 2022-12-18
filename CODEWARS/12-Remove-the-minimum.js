@@ -9,6 +9,7 @@
 //     return [];
 //   }
 
+//My solution (it didn't pass the test)
 function removeSmallest(numbers) {
     let newString = numbers.toString()
     console.log(newString)
@@ -26,3 +27,11 @@ function removeSmallest(numbers) {
 
   console.log(removeSmallest(114325981));
 
+//Solution
+
+function removeSmallest(numbers) {
+    if(!numbers)return [];
+    var min=Math.min.apply(null,numbers);
+    numbers.splice(numbers.indexOf(min),1);
+    return numbers;
+  }
