@@ -1,10 +1,13 @@
 import React from 'react'
 
-
-const pageTitle = (props) => {
+const Title = (props) => {
   return (
-    <h1>{props.text}</h1>
+    <div>
+      <h1>{props.text}</h1>
+
+      </div>
   )
 }
 
-export default pageTitle
+
+export default Title
