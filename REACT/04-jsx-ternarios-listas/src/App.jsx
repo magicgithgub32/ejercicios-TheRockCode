@@ -29,17 +29,15 @@ function App() {
 
   return (
     <div className="App">
+
       <MovieList movies={movies} />
       
-      <FavoriteMovie title={movies.title} year={movies.year} />
+      <FavoriteMovie title={movie.title} year={movie.year} />
 
-      <NormalMovie title={movies.title}/>
+      <NormalMovie title={movie.title}/>
 
-      {movies.map((movie) => {
-        (isFavorite ? {FavoriteMovie} : {NormalMovie}) 
-      })}
+      {movies.map((movie) => movie.isFavorite ?  <FavoriteMovie /> : <NormalMovie /> )}
 
-    
     </div>
   )
 }

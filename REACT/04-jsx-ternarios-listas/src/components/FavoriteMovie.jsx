@@ -3,9 +3,19 @@ import React from 'react'
 const FavoriteMovie = (props) => {
   return (
     <div>
-        <h3>{props.title}</h3> <p>{props.year}</p>
+      {props.movies.map((movie) => {
+          return (
+            <ul> 
+          <li
+            key={movie.title}>{movie.title}
+          </li>
+          <li
+          key={movie.year}>{movie.year}
+        </li>
+        </ul>
+          )})}
     </div>
-  )
-}
+      )}
 
 export default FavoriteMovie
+
