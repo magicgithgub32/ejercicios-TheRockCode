@@ -56,6 +56,16 @@ const handleAddCharacter = () => {
   setCharacters([...characters, newCharacter])
 }
 
+const handleDeleteCharacter = (id) => {
+  
+  const characterToDelete = characters.filter(character => character.id === id[0]);
+
+  characters = characters.filter(character => character.id !== id)
+
+  setCharacters([...characters, characterToDelete])
+
+}
+
   return (
     <div className="character-card">
       {characters.map((character, id) => {
@@ -65,6 +75,7 @@ const handleAddCharacter = () => {
         <p>Estado: {character.status}</p>
         <p>Vive en {character.location}</p>
         <img src={character.image} width="200" height="200"/>
+        <button onClick={handleDeleteCharacter(id)}>Delete this character</button>
         </div>
         )
       })}
