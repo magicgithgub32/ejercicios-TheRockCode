@@ -57,13 +57,8 @@ const handleAddCharacter = () => {
 }
 
 const handleDeleteCharacter = (id) => {
-  
-  const characterToDelete = characters.filter(character => character.id === id[0]);
-
-  characters = characters.filter(character => character.id !== id)
-
-  setCharacters([...characters, characterToDelete])
-
+  const newCharacters = characters.filter(character => character.id !== id)
+  setCharacters(newCharacters)
 }
 
   return (
@@ -75,7 +70,7 @@ const handleDeleteCharacter = (id) => {
         <p>Estado: {character.status}</p>
         <p>Vive en {character.location}</p>
         <img src={character.image} width="200" height="200"/>
-        <button onClick={handleDeleteCharacter(id)}>Delete this character</button>
+        <button onClick={handleDeleteCharacter(character.id)}>Delete this character</button>
         </div>
         )
       })}
@@ -85,5 +80,6 @@ const handleDeleteCharacter = (id) => {
   )
   
 }
+
 
 export default App;
