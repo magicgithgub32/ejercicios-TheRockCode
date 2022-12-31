@@ -1,9 +1,7 @@
 import "./App.css";
-import { useState } from 'react';
-
+import { useState } from "react";
 
 const initialCharacters = [
-
   {
     id: 1,
     name: "Rick Sanchez",
@@ -34,52 +32,47 @@ const initialCharacters = [
   },
 ];
 
-
 function App() {
+  const [characters, setCharacters] = useState(initialCharacters);
 
-const [ characters, setCharacters ] = useState(initialCharacters)
+  const handleAddCharacter = () => {
+    const newCharacter = {
+      id: Date.now(),
+      name: "Mr. Meeseeks",
+      status: "unknown",
+      species: "Humanoid",
+      type: "Meeseeks",
+      origin: "Mr. Meeseeks Box",
+      location: "Earth",
+      image: "https://rickandmortyapi.com/api/character/avatar/242.jpeg",
+    };
 
-  
-const handleAddCharacter = () => {
-  const newCharacter = {
-    id: Date.now(),
-    name: 'Mr. Meeseeks',
-    status: 'unknown',
-    species: 'Humanoid',
-    type: 'Meeseeks',
-    origin: 'Mr. Meeseeks Box',
-    location: 'Earth',
-    image:
-      'https://rickandmortyapi.com/api/character/avatar/242.jpeg',
+    setCharacters([...characters, newCharacter]);
   };
 
-  setCharacters([...characters, newCharacter])
-}
-
-const handleDeleteCharacter = (id) => {
-  const newCharacters = characters.filter(character => character.id !== id)
-  setCharacters(newCharacters)
-}
+  const handleDeleteCharacter = (id) => {
+    const newCharacters = characters.filter((character) => character.id !== id);
+    setCharacters(newCharacters);
+  };
 
   return (
     <div className="character-card">
       {characters.map((character, id) => {
         return (
-        <div key={id}>
-        <h3>{character.name}</h3>
-        <p>Estado: {character.status}</p>
-        <p>Vive en {character.location}</p>
-        <img src={character.image} width="200" height="200"/>
-        <button onClick={handleDeleteCharacter(character.id)}>Delete this character</button>
-        </div>
-        )
+          <div key={id}>
+            <h3>{character.name}</h3>
+            <p>Estado: {character.status}</p>
+            <p>Vive en {character.location}</p>
+            <img src={character.image} width="200" height="200" />
+            <button onClick={handleDeleteCharacter(character.id)}>
+              Delete this character
+            </button>
+          </div>
+        );
       })}
       <button onClick={handleAddCharacter}>Add a new character</button>
-
     </div>
-  )
-  
+  );
 }
-
 
 export default App;
