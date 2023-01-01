@@ -64,7 +64,10 @@ function App() {
             <p>Estado: {character.status}</p>
             <p>Vive en {character.location}</p>
             <img src={character.image} width="200" height="200" />
-            <button onClick={handleDeleteCharacter(character.id)}>
+            {/* <button onClick={handleDeleteCharacter(character.id)}> //Así no, pues asi se esta ejecutando cuando se esta pintando en el dom el button, se estaban renderizando los characters pero luego se borraban todos */}
+              {/* y pasa tan rapido todo q no lo ves */}
+            <button onClick={() => handleDeleteCharacter(character.id)}>
+
               Delete this character
             </button>
           </div>
