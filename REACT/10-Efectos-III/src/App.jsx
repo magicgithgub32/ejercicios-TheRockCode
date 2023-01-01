@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Editando estilos de forma dinámica.</h2>
+      <h2>Editando estilos de forma dinámica</h2>
       <button  style={style}>Cambia el color de fondo del botón</button>
       <input 
       type="color"
@@ -62,3 +62,7 @@ function App() {
 }
 
 export default App
+
+
+
+
