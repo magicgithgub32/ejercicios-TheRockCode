@@ -1,7 +1,7 @@
 import './App.css'
 import Login from './pages/Login'
 import Private from './pages/Private'
-import { Routes, Route, Link } from 'react-router-dom'
+import { Routes, Route } from 'react-router-dom'
 
 function App() {
 
