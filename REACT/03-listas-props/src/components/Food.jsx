@@ -1,10 +1,10 @@
 import React from "react";
 
-const Food = (props) => {
+const Food = (food) => {
   return (
           <div>
-            <h3>{props.name}</h3>
-            <p>tiene {props.calories} calorías </p>
+            <h3>{food.name}</h3>
+            <p>got {food.calories} calories </p>
           </div>
   );
 };

@@ -1,6 +1,6 @@
 import React from "react"
 
-const MovieList = ({props}) => {
+const MovieList = (props) => {
   return ( 
   <div>
     <h3>{props.movies}</h3>
