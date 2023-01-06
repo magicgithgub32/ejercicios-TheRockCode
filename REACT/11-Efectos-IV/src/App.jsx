@@ -23,18 +23,17 @@ function App() {
   const [wantedGenres, setWantedGenres] = useState(genres);
 
   useEffect(() => {
-    const desiredMovies = (wantedGenres.name === "All"
+    const desiredMovies =
+      wantedGenres.name === "All"
         ? movies
-        : movies.filter((movie) => movie.genre === wantedGenres.name)
-    );
-    setNewListOfMovies(desiredMovies)
+        : movies.filter((movie) => movie.genre === wantedGenres.name);
+    setNewListOfMovies(desiredMovies);
   }, [wantedGenres]);
-
 
   return (
     <div>
       <h1>Movies</h1>
-      
+
       <select
         value={wantedGenres.id}
         onChange={(event) =>
@@ -59,4 +58,3 @@ function App() {
 }
 
 export default App;
-

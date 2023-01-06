@@ -11,7 +11,7 @@ function App() {
 
   return (
     <div className="App">
-      <Title text='¡Bienvenid@s a Rock{theCode}!'/>
+      <Title text={pageTitle}/>
       <Paragraph name={myName} place={myPlace} date={myDate} />
 
       
@@ -22,3 +22,5 @@ function App() {
 }
 
 export default App
+
+

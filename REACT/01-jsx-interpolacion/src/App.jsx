@@ -20,7 +20,7 @@ function App() {
       
       <h1>Estudio en {school}</h1>
       <p>Veremos un total de {chapters} módulos de contenido</p>
-      <p>Lo que estoy aprendiendo en {school} está siendo {isAwesome === true ? 'increíble' : 'top'}</p>
+      <p>Lo que estoy aprendiendo en {school} está siendo {isAwesome ? 'increíble' : 'top'}</p>
       
       {technologies.map((technology, index) => (
       <ul> Aprendemos a usar {technology} </ul>
@@ -32,3 +32,6 @@ function App() {
 }
 
 export default App
+
+
+
