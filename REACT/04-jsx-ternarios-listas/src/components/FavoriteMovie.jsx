@@ -1,21 +1,15 @@
 import React from 'react'
 
 const FavoriteMovie = (props) => {
-  return (
-    <div>
-      {props.movies.map((movie) => {
-          return (
-            <ul> 
-          <li
-            key={movie.title}>{movie.title}
-          </li>
-          <li
-          key={movie.year}>{movie.year}
-        </li>
-        </ul>
-          )})}
-    </div>
-      )}
+        return (
 
+          <div>
+            <h3>{props.title}</h3>
+            <p>{props.year}</p>
+
+          </div>
+
+      
+        )
+        }
 export default FavoriteMovie
-

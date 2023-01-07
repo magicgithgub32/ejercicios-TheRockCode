@@ -11,7 +11,7 @@ const movies = [
 ];
 
 const genres = [
-  { id: 1, name: "All" },
+  { id: 1, name: "Any" },
   { id: 2, name: "Drama" },
   { id: 3, name: "Action" },
   { id: 4, name: "Thriller" },
@@ -24,11 +24,11 @@ function App() {
 
   useEffect(() => {
     const desiredMovies =
-      wantedGenres.name === "All"
+      wantedGenres.name === "Any"
         ? movies
         : movies.filter((movie) => movie.genre === wantedGenres.name);
     setNewListOfMovies(desiredMovies);
-  }, [wantedGenres]);
+  }, [wantedGenres, movies]);
 
   return (
     <div>
@@ -38,7 +38,7 @@ function App() {
         value={wantedGenres.id}
         onChange={(event) =>
           setWantedGenres(
-            genres.find((genre) => genre.id === event.target.value)
+            genres.find((genre) => genre.id == event.target.value)
           )
         }
       >
