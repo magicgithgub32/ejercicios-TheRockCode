@@ -8,8 +8,8 @@ function App() {
   useEffect(() => {
     fetch(`https:rickandmortyapi.com/api/character`)
     .then((res) => res.json())
-    .then((response) => {
-      setCharacters (response.results)
+    .then((apiData) => {
+      setCharacters (apiData.results)
     })
   }, [])
 
@@ -29,3 +29,6 @@ return (
 }
 
 export default App
+
+
+
