@@ -9,8 +9,8 @@ function App() {
     <div className="App">
       <Routes>
         <Route>
-          <Route path="./Pages/Login.jsx" element={<Login />} />
-          <Route path="./Pages/Private.jsx" element={<Private />} />
+          <Route path="login" element={<Login />} />
+          <Route path="private" element={<Private />} />
         </Route>
       </Routes>
       

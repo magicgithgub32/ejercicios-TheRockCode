@@ -13,8 +13,8 @@ function App() {
 
       <Routes>
         <Route>
-          <Route path="./pages/Home.jsx" element={<Home />} />
-          <Route path="./pages/About.jsx" element={<About />} />
+          <Route path="home" element={<Home />} />
+          <Route path="about" element={<About />} />
         </Route>
       </Routes>
     </div>

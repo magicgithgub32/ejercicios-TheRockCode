@@ -4,15 +4,13 @@ const Login = () => {
 
         ev.preventDefault();
 
-        const user = ev.target.element.user.value;
-        const password = ev.target.element.password.value;
+        const user = event.target[0].value;
+        const password = event.target[1].value;
 
         if (user === 'student' && password === `1234abc` ) {
             localStorage.setItem('authenticated', 'true')
         }
     } 
-
-}
 
 return (
     <div>
@@ -29,5 +27,5 @@ return (
     </div>
 
 )
-
+}
 export default Login
