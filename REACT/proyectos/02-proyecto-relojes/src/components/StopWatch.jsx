@@ -6,7 +6,7 @@ const Stopwatch = () => {
 const [time, setTime] = useState(0);
 const [timerOn, setTimerOn] = useState(false);
 
-useEffect = (() => {
+useEffect (() => {
     let interval = null;
 
     if (timerOn) {

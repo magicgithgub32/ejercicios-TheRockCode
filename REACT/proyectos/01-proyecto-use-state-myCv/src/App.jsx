@@ -1,13 +1,13 @@
 import { useState } from "react";
 import "./App.css";
-import { Cv } from "./CV/Cv";
-import { Hero } from "./components/Hero";
-import { About } from "./components/About";
-import { Education } from "./components/Education";
-import { Experience } from "./components/Experience";
-import { More } from "./components/More";
+import  { Cv }  from "./CV/Cv";
+import  Hero  from "./components/Hero";
+import  About  from "./components/About";
+import  Education  from "./components/Education";
+import  Experience  from "./components/Experience";
+import  More  from "./components/More";
 
-const { hero, education, experience, languages, habilities, volunteer } = Cv;
+const { hero, education, experience, languages, abilities, volunteer } = Cv;
 
 function App() {
   const [education, setEducation] = useState(true);
@@ -25,19 +25,19 @@ function App() {
       />
       <button
         className="custom-btn btn-4"
-        onClick={() => setShowEducation(true)}
+        onClick={() => setEducation(true)}
       >
         Education
       </button>
       <button
         className="custom-btn btn-4"
-        onClick={() => setShowEducation(true)}
+        onClick={() => setEducation(true)}
       >
         Experience
       </button>
       <button
         className="custom-btn btn-4"
-        onClick={() => setShowEducation(false)}
+        onClick={() => setEducation(false)}
       ></button>
 
       <div>
