@@ -1,0 +1,7 @@
+.stopwatch {
+    color: white;
+    background-color: grey;
+    gap: 4px;
+    flex: auto;
+    flex-wrap: wrap;
+}

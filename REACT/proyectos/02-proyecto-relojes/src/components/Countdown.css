@@ -1,0 +1,8 @@
+.countdown {
+    color: grey;
+    background-color: whitesmoke;
+    border-radius: 4px;
+    padding: 4px;
+    gap: 4px;
+    margin: 1px solid black;
+}

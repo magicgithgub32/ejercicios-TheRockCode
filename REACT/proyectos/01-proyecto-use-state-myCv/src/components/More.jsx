@@ -1,3 +1,6 @@
+import React from "react";
+import "./More.css";
+
 const More = ({ languages, abilities, volunteer }) => {
   return (
     <div className="more-card">
