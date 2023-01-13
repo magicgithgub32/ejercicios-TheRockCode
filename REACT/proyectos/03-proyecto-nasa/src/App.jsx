@@ -12,16 +12,25 @@ function App() {
 
   const NASA_URL = "https://api.nasa.gov/";
 
-  const NASA_API_KEY = "https://api.nasa.gov/planetary/apod?api_key=20kefSq8s0zxVg8o8afFNEOO1dQySseSKJ87nimC"
-
-  const logo = './favicon-192.png'
+  const NASA_API_KEY = "20kefSq8s0zxVg8o8afFNEOO1dQySseSKJ87nimC"
   
+  // useEffect(() => {
+  //   const getApod = async () => {
+  //     const data = await axios.get(
+  //       `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`
+  //     );
+  //     setApod(data.data);
+  //   };
+  //   getApod();
+  // }, [date]);
+
   useEffect(() => {
     const getApod = async () => {
-      const data = await axios.get(
+      const response = await fetch(
         `${NASA_URL}planetary/apod?date=${date}&api_key=${NASA_API_KEY}`
       );
-      setApod(data.data);
+      const data = await response.json();
+      setApod(data);
     };
     getApod();
   }, [date]);
@@ -33,7 +42,7 @@ function App() {
   return (
     <div className="App">
       <h2 className="title">
-        NASA API <img src={logo} className="logo" alt="NASA LOGO" />
+        NASA API <img src='./favicon-192.png' className="logo" alt="NASA LOGO" />
       </h2>
       <h1>Astronomy Picture of the Day</h1>
       <input type="date" id="photo-date" onChange={handleInput} />
