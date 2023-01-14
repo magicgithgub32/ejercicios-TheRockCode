@@ -1,9 +1,9 @@
 import React from 'react'
 
-const NormalMovie2 = (title) => {
+const NormalMovie2 = (movies) => {
   return (
     <div>
-        <h3>{title}</h3>
+        <h3>{movies.title}</h3>
         <p>Peli no favorita 💔</p>
     </div>
   )
