@@ -30,3 +30,11 @@ console.log(`El valor del interruptor es: ${active}`)
 
 }
   export default App
+
+
+
+
+
+
+
+
