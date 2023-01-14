@@ -5,7 +5,7 @@ const FavoriteMovie = (props) => {
 
           <div>
             <h3>{props.title}</h3>
-            <p>{props.year}</p>
+            <p>{props.year} 💖</p>
 
           </div>
 

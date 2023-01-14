@@ -4,7 +4,7 @@ const NormalMovie = (props) => {
   return (
     <div>
         <h3>{props.title}</h3>
-        <p>Peli no favorita</p>
+        <p>Peli no favorita 💔</p>
     </div>
   )
 }
