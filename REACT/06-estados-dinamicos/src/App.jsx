@@ -68,12 +68,12 @@ function App() {
               {/* y pasa tan rapido todo q no lo ves */}
             <button onClick={() => handleDeleteCharacter(character.id)}>
 
-              Delete this character
+              Delete this character ⌫
             </button>
           </div>
         );
       })}
-      <button onClick={handleAddCharacter}>Add a new character</button>
+      <button onClick={handleAddCharacter}>Add a new character 🔥</button>
     </div>
   );
 }
@@ -86,106 +86,3 @@ export default App;
 
 
 
-// import "./App.css";
-// import { useState } from 'react';
-
-// function App () {
-
-//   const initialCharacters = [
-//     {
-//       id: 1,
-//       name: 'Rick Sanchez',
-//       status: 'Alive',
-//       origin: 'Earth (C-137)',
-//       location: 'Citadel of Ricks',
-//       image:
-//         'https://rickandmortyapi.com/api/character/avatar/1.jpeg',
-//     },
-  
-//     {
-//       id: 2,
-//       name: 'Morty Smith',
-//       status: 'Alive',
-//       species: 'Human',
-//       origin: 'Earth (C-137)',
-//       location: 'Citadel of Ricks',
-//       image:
-//         'https://rickandmortyapi.com/api/character/avatar/2.jpeg',
-//     },
-  
-//     {
-//       id: 3,
-//       name: 'Summer Smith',
-//       status: 'Alive',
-//       species: 'Human',
-//       origin: 'Earth (Replacement Dimension)',
-//       location: 'Earth (Replacement Dimension)',
-//       image:
-//         'https://rickandmortyapi.com/api/character/avatar/3.jpeg',
-//     },
-//   ];
-
-//   const [ characters, setCharacters ] = useState (initialCharacters) 
-
-//   console.log(characters)
-
-//   const handleAddCharacter = () => {
-//     const newCharacter = {
-//       id: Date.now(),
-//       name: 'Mr. Meeseeks',
-//       status: 'unknown',
-//       species: 'Humanoid',
-//       type: 'Meeseeks',
-//       origin: 'Mr. Meeseeks Box',
-//       location: 'Earth',
-//       image:
-//         'https://rickandmortyapi.com/api/character/avatar/242.jpeg',
-//     };
-  
-//     setCharacters ([...characters, newCharacter])
-//     }
-
-//     const handleDeleteCharacter = (id) => {
-//      const newCharacters = (characters.filter((character) => character.id !== id))
-//       setCharacters ([newCharacters])
-
-//     }
-
-
-// return (
-
-//   <div className='character-card'>
-
-//   {characters.map((character) => {
-//     return (
-//     <>
-//     <h3>{character.name}</h3>
-//     <p>Estatus: {character.status}</p>
-//     <p>Lives in: {character.location}</p>
-//     <img src={character.image} width='200' height='200' ></img>    
-//     <button onClick={handleDeleteCharacter(character.id)}>Delete this one</button>
-//     </>
-    
-//     )
-//   })}
-//   <p>
-
-// <button onClick={handleAddCharacter}>Add a new character</button>
-
-// </p>
-
-    
-// </div>
-
-  
-// )
-
-// }
-
-
-
-
-
-
-// export default App
- 
