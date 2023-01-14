@@ -3,29 +3,44 @@ import Food from "./components/Food";
 
 function App() {
   const foods = [
-    { name: "pizza", calories: 1400 },
-    { name: "hamburger", calories: 1000 },
-    { name: "fish and chips", calories: 600 },
-    { name: "salad", calories: 400 },
+    {
+      name: "pizza",
+      calories: 1400,
+      description: "wheat, oil, tomato, cheese",
+    },
+    {
+      name: "hamburger",
+      calories: 1000,
+      description: "meat, bread, cheese, tomato, onion",
+    },
+    {
+      name: "fish and chips",
+      calories: 600,
+      description: "fried fish, fried potatoes",
+    },
+    {
+      name: "salad",
+      calories: 400,
+      description: "lettuce, olive oil, tomato, onion, pickles",
+    },
   ];
 
-  return (
-    <div className="App">
-      <h3>Menu</h3>
-      <ul>
-        {foods.map((food) => {
-          return <Food calories={food.calories} name={food.name} />;
-        })}
-      </ul>
+  return  (
+    <div>
+      <h1>MENU</h1>
+  
+  {foods.map((food) => {
+    return  (
+      <div>
+      <h3>Food choice:</h3>
+    <Food name={food.name}
+    calories={food.calories}
+    description={food.description} />
     </div>
-  );
-}
+  )}  
+  )}
+  
+  </div>
+)}
 
 export default App;
-
-
-
-import "./App.css";
-
-
-

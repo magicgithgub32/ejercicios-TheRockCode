@@ -4,7 +4,9 @@ const Food = (food) => {
   return (
           <div>
             <h3>{food.name}</h3>
-            <p>got {food.calories} calories </p>
+            <p>{food.calories} calories </p>
+            <p>Ingredients: {food.description}</p>
+
           </div>
   );
 };

@@ -49,7 +49,7 @@ function App() {
     );
 
     return () => {
-      clearInterval(interval);
+      clearInterval(interval); //esto es para evitar más renders de los necesarios. La visualización de la hora funciona igual sin limpiar el intervalo), cuestión de optimización.
     };
   }, []);
 
