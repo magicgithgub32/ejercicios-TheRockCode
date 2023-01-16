@@ -41,7 +41,7 @@ function App() {
       ></button>
 
       <div>
-        {showEducation ? (
+        {education ? (
           <Education education={education} />
         ) : (
           <Experience experience={experience} />
