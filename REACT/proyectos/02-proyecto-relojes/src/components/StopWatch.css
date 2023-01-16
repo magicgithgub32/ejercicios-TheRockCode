@@ -4,4 +4,8 @@
     gap: 4px;
     flex: auto;
     flex-wrap: wrap;
+    font-size: large;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    border-radius: 4px;
 }

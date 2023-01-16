@@ -3,6 +3,7 @@ import "./Countdown.css";
 
 const Countdown = () => {
   const [time, setTime] = useState('');
+  
   useEffect(() => {
     let countDownDate = new Date("April 30, 2023 12:00:00").getTime();
     let x = setInterval(() => {

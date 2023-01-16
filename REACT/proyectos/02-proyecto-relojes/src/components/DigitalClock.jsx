@@ -11,6 +11,7 @@ const DigitalClock = () => {
       setClockState(date.toLocaleTimeString());
     }, 1000);
   }, []);
+  
   return (
     <div className="digital-clock">
       <h2>{clockState}</h2>
