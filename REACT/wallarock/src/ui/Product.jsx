@@ -30,5 +30,5 @@ export const ProductLink = ({ src, href, title, ads }) => {
 }
 
 export const ProductListWrapper = styled.div`
-  margin-top: 20px;
+  margin-top: 8px;
 `

@@ -20,18 +20,20 @@ export const TitleWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 24px;
+  text-align: center;
+  margin-bottom: 32px;
+  margin-top: 64px;
 `
 
 export const TitleH1 = styled.h1`
   font-size: 32px;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 32px;
   color: #253238;
 `
 export const TitleHeavy = styled.h1`
   font-size: 32px;
-  font-weight: 300;
+  font-weight: 700;
   line-height: 32px;
   color: #253238;
 `
