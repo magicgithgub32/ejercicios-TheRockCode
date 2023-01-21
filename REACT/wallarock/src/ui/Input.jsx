@@ -8,6 +8,8 @@ export const InputWrapper = styled.div`
 export const InputUI = styled.input`
   border-radius: 24px;
   justify-content: space-around;
+  padding: 8px;
+  margin-right: 6px;
 `
 
 // export const SearchIcon = styled.img`
@@ -32,14 +34,16 @@ export const ButtonUI = styled.button`
   color: #fff;
   border-radius: 24px;
   cursor: pointer;
+  @media screen and (max-width: 758px) {
+    display: none;
+  }
 `
 
 export const Input = () => {
-  const isDesktop = window.matchMedia('(min-width: 768px)').matches
   return (
     <InputWrapper>
       <InputUI text="text" placeholder="🔎 Buscar en Todas las Categorías" size="50" />
-      <ButtonUI isDesktop={isDesktop}>Buscar</ButtonUI>
+      <ButtonUI>Buscar</ButtonUI>
     </InputWrapper>
   )
 }
