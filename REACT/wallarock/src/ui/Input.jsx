@@ -10,6 +10,7 @@ export const InputUI = styled.input`
   justify-content: space-around;
   padding: 8px;
   margin-right: 6px;
+  width: 100%;
 `
 
 // export const SearchIcon = styled.img`
