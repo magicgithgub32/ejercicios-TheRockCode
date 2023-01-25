@@ -8,7 +8,7 @@ function App() {
     "Hola, soy el texto de un tweet"
   );
 
-  const [tweetImage, setTweetImage] = useState("");
+  const [tweetImage, setTweetImage] = useState<string>("");
 
   return (
     <MainLayOutUI>

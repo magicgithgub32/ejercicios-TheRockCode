@@ -1,4 +1,4 @@
-import { TweetImage, TweetViewContainer } from "../ui/TweetUi";
+import { TweetImage, TweetViewContainer } from "../ui/TweetView";
 
 type Props = {
   text: string;
@@ -9,15 +9,15 @@ const TweetViewer = (props: Props) => {
   return (
     <TweetViewContainer>
       <div id="tweet-text-content">
-        {props.text.split("\n").map((subtext, index) => (
-          <p key={index}>{subtext}</p>
-        ))}
+        {props.text.split("\n").map((subtext, index) => {
+          return <p key={index}>{subtext}</p>;
+        })}
       </div>
 
       {props.imageUrl ? (
         <TweetImage
           id="tweet-image-content"
-          src="{props.imageUrl}"
+          src={props.imageUrl}
           alt="tweet-image"
         />
       ) : null}

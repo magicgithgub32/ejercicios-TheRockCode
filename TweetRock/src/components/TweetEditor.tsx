@@ -1,7 +1,6 @@
 type Props = {
   text: string;
   setText: (arg: string) => void;
-  imageUrl: string;
   setImageUrl: (arg: string) => void;
 };
 
