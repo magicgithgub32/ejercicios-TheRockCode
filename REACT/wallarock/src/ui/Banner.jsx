@@ -1,17 +1,17 @@
 import styled from 'styled-components'
 
 export const BannerWrapper = styled.div`
-background-color: #385EF9;
-height: 334px;
-margin-bottom: 10px;
-margin-top: 24px;
-display; flex;
-flex-direction: column;
-height: 100%;
-justify-content: space-around;
-border-radius: 16px;
-visibility: inherit;
-width: 520;
+  background-color: #385ef9;
+  height: 334px;
+  margin-bottom: 10px;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  border-radius: 16px;
+  visibility: inherit;
+  width: 520px;
 `
 
 export const BannerTop = styled.div`
@@ -26,7 +26,6 @@ export const BannerImage = styled.img`
   height: 81px;
   color: #253238;
   padding-top: 24px;
-  overflow: auto;
 `
 export const BannerPro = styled.div`
   justify-content: center;
