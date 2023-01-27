@@ -2,14 +2,14 @@ import { ChangeEvent, ChangeEventHandler } from "react";
 
 type Props = {
   text: string;
-  setText: (arg: string) => void;
-  setImageUrl: (arg: string) => void;
-  setAvatar: (arg: string) => void;
-  userName: string;
-  setUserName: (arg: string) => void;
+  username: string;
   handle: string;
-  setHandle: (arg: string) => void;
   linkTo: string;
+  setText: (arg: string) => void;
+  setUsername: (arg: string) => void;
+  setHandle: (arg: string) => void;
+  setAvatar: (arg: string) => void;
+  setImageUrl: (arg: string) => void;
   setLinkTo: (arg: string) => void;
 };
 
@@ -17,11 +17,11 @@ const TweetEditor = ({
   text,
   setText,
   setImageUrl,
-  setAvatar,
-  userName,
-  setUserName,
+  username,
   handle,
+  setUsername,
   setHandle,
+  setAvatar,
   linkTo,
   setLinkTo,
 }: Props) => {
@@ -47,7 +47,7 @@ const TweetEditor = ({
 
   return (
     <div>
-      <label htmlFor="avatar">Avatar del usuario:</label>
+      <label htmlFor="avatar">Avatar de usuario:</label>
       <input
         type="file"
         name="tweet-avatar"
@@ -60,9 +60,9 @@ const TweetEditor = ({
         type="text"
         name="username"
         id="username"
-        value={userName}
+        value={username}
         onChange={(event) => {
-          setUserName(event.target.value);
+          setUsername(event.target.value);
         }}
       />
       <br />
@@ -76,7 +76,6 @@ const TweetEditor = ({
           setHandle(event.target.value);
         }}
       />
-
       <br />
       <label htmlFor="tweet-text">Contenido del tweet:</label>
       <textarea
@@ -94,6 +93,15 @@ const TweetEditor = ({
         name="tweet-image"
         id="tweet-image"
         onChange={(event) => handleImageUrl(event, setImageUrl)}
+      />
+      <br />
+      <label htmlFor="tweet-link-to">Añade una URL destacada:</label>
+      <input
+        type="url"
+        name="tweet-link-to"
+        id="tweet-link-to"
+        value={linkTo}
+        onChange={(event) => setLinkTo(event.target.value)}
       />
     </div>
   );

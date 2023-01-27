@@ -1,40 +1,43 @@
 import { useState } from "react";
 import TweetEditor from "./components/TweetEditor";
 import TweetViewer from "./components/TweetViewer";
-import { MainLayOutUI } from "./ui/LayOut";
+import { MainLayoutUI } from "./ui/Layout";
 
 function App() {
   const [tweetText, setTweetText] = useState<string>(
-    "Hola, soy el texto de un tweet"
+    "hola soy el texto de un tweet"
   );
   const [tweetImage, setTweetImage] = useState<string>("");
   const [tweetAvatar, setTweetAvatar] = useState<string>("");
-  const [tweetUserName, setTweetUserName] = useState<string>("Username");
+  const [tweetUsername, setTweetUsername] = useState<string>("username");
   const [tweetHandle, setTweetHandle] = useState<string>("user handle");
   const [tweetLinkTo, setTweetLinkTo] = useState<string>("");
 
   return (
-    <MainLayOutUI>
+    <MainLayoutUI>
       <TweetEditor
+        username={tweetUsername}
+        setUsername={setTweetUsername}
+        handle={tweetHandle}
+        setHandle={setTweetHandle}
+        setAvatar={setTweetAvatar}
         text={tweetText}
         setText={setTweetText}
         setImageUrl={setTweetImage}
-        setAvatar={setTweetAvatar}
-        userName={tweetUserName}
-        setUserName={setTweetUserName}
-        handle={tweetHandle}
-        setHandle={setTweetHandle}
         linkTo={tweetLinkTo}
         setLinkTo={setTweetLinkTo}
       />
+
       <TweetViewer
         text={tweetText}
         imageUrl={tweetImage}
         avatar={tweetAvatar}
-        username={tweetUserName}
+        username={tweetUsername}
         handle={tweetHandle}
+        linkTo={tweetLinkTo}
       />
-    </MainLayOutUI>
+    </MainLayoutUI>
   );
 }
+
 export default App;

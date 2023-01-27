@@ -1,9 +1,11 @@
+import { useEffect, useState } from "react";
 import {
+  TweetAvatar,
   TweetDataGreyText,
   TweetImage,
+  TweetTextContent,
   TweetUserData,
   TweetViewContainer,
-  TweetTextContent,
 } from "../ui/TweetView";
 
 type Props = {
@@ -12,22 +14,26 @@ type Props = {
   avatar: string;
   username: string;
   handle: string;
+  linkTo: string;
 };
 
 const TweetViewer = (props: Props) => {
+  const [metadataImage, setMetadataImage] = useState<string>("");
+
   const renderTextWithLinks = (text: string) => {
     return text.split("\n").map((subtext, index) => {
       return (
         <p key={index}>
-          {subtext.split("").map((textElement) => {
+          {subtext.split(" ").map((textElement) => {
             const isLink =
-              textElement.includes(".com") || textElement.includes("http://");
+              textElement.includes("https://") ||
+              textElement.includes("http://");
 
             if (isLink) {
               return (
-                <span>
+                <>
                   <a href={textElement}>{textElement}</a>{" "}
-                </span>
+                </>
               );
             } else {
               return textElement + " ";
@@ -37,32 +43,60 @@ const TweetViewer = (props: Props) => {
       );
     });
   };
+
+  const loadMetadata = () =>
+    fetch(`https://jsonlink.io/api/extract?url=${props.linkTo}`)
+      .then((res) => res.json())
+      .then((response) => {
+        setMetadataImage(response.images[0] || "");
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+
   return (
-    <TweetViewContainer>
-      <article>
-        <img src={props.avatar} alt="avatar" />
-      </article>
+    <>
+      <TweetViewContainer>
+        <article>
+          <TweetAvatar src={props.avatar} alt="avatar" />
+        </article>
 
-      <article>
-        <TweetUserData>
-          <b>{props.username}</b>
-          <TweetDataGreyText>@{props.handle}</TweetDataGreyText>
-          <TweetDataGreyText>·</TweetDataGreyText>
-          <TweetDataGreyText>18 Jun.</TweetDataGreyText>
-        </TweetUserData>
-        <TweetTextContent id="tweet-text-content">
-          {renderTextWithLinks(props.text)}
-        </TweetTextContent>
+        <article>
+          <TweetUserData>
+            <b>{props.username}</b>
+            <TweetDataGreyText>@{props.handle}</TweetDataGreyText>
+            <TweetDataGreyText>·</TweetDataGreyText>
+            <TweetDataGreyText>18 Jun.</TweetDataGreyText>
+          </TweetUserData>
 
-        {props.imageUrl ? (
-          <TweetImage
-            id="tweet-image-content"
-            src={props.imageUrl}
-            alt="tweet-image"
-          />
-        ) : null}
-      </article>
-    </TweetViewContainer>
+          <TweetTextContent id="tweet-text-content">
+            {renderTextWithLinks(props.text)}
+          </TweetTextContent>
+          {props.imageUrl ? (
+            <TweetImage
+              id="tweet-image-content"
+              src={props.imageUrl}
+              alt="tweet-image"
+            />
+          ) : null}
+          {metadataImage ? (
+            <a href={props.linkTo} target="_blank" rel="noopener">
+              <TweetImage
+                id="tweet-metadata-image"
+                src={metadataImage}
+                alt="tweet-image"
+              />
+            </a>
+          ) : null}
+        </article>
+      </TweetViewContainer>
+
+      {props.linkTo ? (
+        <div>
+          <button onClick={loadMetadata}>Cargar metadata del link</button>
+        </div>
+      ) : null}
+    </>
   );
 };
 
