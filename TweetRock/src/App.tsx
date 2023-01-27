@@ -1,7 +1,7 @@
 import { useState } from "react";
 import TweetEditor from "./components/TweetEditor";
 import TweetViewer from "./components/TweetViewer";
-import { MainLayoutUI } from "./ui/Layout";
+import { MainLayOutUI } from "./ui/LayOut";
 
 function App() {
   const [tweetText, setTweetText] = useState<string>(
@@ -14,7 +14,7 @@ function App() {
   const [tweetLinkTo, setTweetLinkTo] = useState<string>("");
 
   return (
-    <MainLayoutUI>
+    <MainLayOutUI>
       <TweetEditor
         username={tweetUsername}
         setUsername={setTweetUsername}
@@ -36,7 +36,7 @@ function App() {
         handle={tweetHandle}
         linkTo={tweetLinkTo}
       />
-    </MainLayoutUI>
+    </MainLayOutUI>
   );
 }
 
