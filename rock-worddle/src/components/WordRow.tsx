@@ -1,11 +1,17 @@
-const WordRow = () => {
+import { BoardCell } from "../ui/GameBoard";
+
+type Props = {
+  isActive: boolean;
+};
+
+const WordRow = ({ isActive }: Props) => {
   return (
     <>
-      <div>A</div>
-      <div>B</div>
-      <div>C</div>
-      <div>D</div>
-      <div>E</div>
+      <BoardCell isActive={isActive}></BoardCell>
+      <BoardCell isActive={isActive}></BoardCell>
+      <BoardCell isActive={isActive}></BoardCell>
+      <BoardCell isActive={isActive}></BoardCell>
+      <BoardCell isActive={isActive}></BoardCell>
     </>
   );
 };
