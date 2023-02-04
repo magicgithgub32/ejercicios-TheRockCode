@@ -1,33 +1,41 @@
-import { BoardCell } from "../ui/GameBoard";
+import { BoardCell, BoardLink } from "../ui/GameBoard";
+import { getLetterColors } from "../utils/words";
 
 type Props = {
   isActive: boolean;
   guess: string;
-  previousGuess?: string;
   word: string;
+  previousGuess?: string;
+  isValid: boolean;
 };
 
-const WordRow = ({ isActive, guess, word, previousGuess }: Props) => {
+const WordRow = ({ isValid, isActive, word, guess, previousGuess }: Props) => {
   const wordToShow = isActive ? guess : previousGuess;
+  const colors = getLetterColors(word, wordToShow);
+
   return (
     <>
       {[0, 1, 2, 3, 4].map((cell) => (
         <BoardCell
           key={cell}
           isActive={isActive}
-          isGreen={word[cell] === previousGuess?.[cell]}
-          isYellow={
-            previousGuess ? word.includes(previousGuess?.[cell]) : false
-          }
+          backgroundColor={colors[cell]}
         >
           {wordToShow?.[cell] ?? ""}
         </BoardCell>
       ))}
 
-      {/* <BoardCell isActive={isActive}>{wordToShow?.[1]}</BoardCell>
-      <BoardCell isActive={isActive}>{wordToShow?.[2]}</BoardCell>
-      <BoardCell isActive={isActive}>{wordToShow?.[3]}</BoardCell>
-      <BoardCell isActive={isActive}>{wordToShow?.[4]}</BoardCell> */}
+      {isValid ? (
+        <BoardLink
+          target="_blank"
+          rel="noopener"
+          href={`https://dle.rae.es/${wordToShow}`}
+        >
+          Def. 📕
+        </BoardLink>
+      ) : (
+        <BoardLink />
+      )}
     </>
   );
 };
