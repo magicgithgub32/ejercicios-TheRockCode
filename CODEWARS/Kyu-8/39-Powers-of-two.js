@@ -5,14 +5,14 @@
 // n = 1  ==> [1, 2]     # [2^0, 2^1]
 // n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 
-const powersOfTwo = (n) => {
-  let arr = [];
-  for (let i = 0; i <= n; i++) {
-    console.log(i);
-    arr[i] = Math.pow(n, i);
-  }
-  return arr;
-};
+// const powersOfTwo = (n) => {
+//   let arr = [];
+//   for (let i = 0; i <= n; i++) {
+//     console.log(i);
+//     arr[i] = Math.pow(n, i);
+//   }
+//   return arr;
+// };
 
 // function powersOfTwo(n){
 //     let powers = []
@@ -22,5 +22,14 @@ const powersOfTwo = (n) => {
 //     }
 //     return powers
 //   }
+
+function powersOfTwo(n) {
+  let powArr = [];
+  if (n === 0) powArr = [];
+
+  for (let i = 0; i <= n; i++) powArr.push(Math.pow(2, i));
+
+  return powArr;
+}
 
 console.log(powersOfTwo(4));
