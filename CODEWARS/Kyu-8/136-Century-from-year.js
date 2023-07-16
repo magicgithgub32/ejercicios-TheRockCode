@@ -11,22 +11,11 @@
 // 2000 --> 20
 // Note: this kata uses strict construction as shown in the description and the examples, you can read more about it here
 
-const century = (year) => {
-  const str = year.toString();
+function centuryFromYear(num) {
+  let modulo = num % 100 === 0 ? 0 : 1;
+  let centuries = Math.floor(num / 100);
 
-  const arr = str.split("");
+  return modulo + centuries;
+}
 
-  let century = 0;
-
-  if (year <= 100) {
-    century = 1;
-  } else if ((year > 100) & (year <= 1000)) {
-    century = parseInt(arr[0]) + 1;
-  } else if (year > 1000 && year < 2001) {
-    century = parseInt(arr[0] + arr[1]) + 1;
-  }
-
-  return century;
-};
-
-console.log(century(2000));
+console.log(centuryFromYear(1701));
