@@ -18,7 +18,23 @@
 //   Lew attacks Harry: Harry now has -1 health and is dead. Lew wins.
 
 function declareWinner(fighter1, fighter2, firstAttacker) {
-  return "Write your code here";
+  let currentAttacker = firstAttacker;
+
+  while (fighter1.health > 0 && fighter2.health > 0) {
+    if (currentAttacker === fighter1.name) {
+      fighter2.health -= fighter1.damagePerAttack;
+      currentAttacker = fighter2.name;
+    } else {
+      fighter1.health -= fighter2.damagePerAttack;
+      currentAttacker = fighter1.name;
+    }
+  }
+
+  if (fighter1.health > 0) {
+    return fighter1.name;
+  } else {
+    return fighter2.name;
+  }
 }
 
 console.log(declareWinner(("Lew", 10, 2), ("Harry", 5, 4), "Lew"));
