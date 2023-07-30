@@ -16,8 +16,8 @@ function sumMul(n, m) {
   if (n < 1 || m < 1) {
     return "INVALID";
   } else {
-    for (let i = 1; i <= m; i++) {
-      sum += n * i;
+    for (let i = n; i < m; i += n) {
+      sum += i;
     }
   }
   return sum;
