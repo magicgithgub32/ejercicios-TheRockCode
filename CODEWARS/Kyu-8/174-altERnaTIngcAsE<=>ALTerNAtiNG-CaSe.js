@@ -23,3 +23,4 @@ const toAlternatingCase = (string) => {
 };
 
 console.log(toAlternatingCase("1a2b3c4d5e"));
+console.log(toAlternatingCase("Hello WORLD"));
