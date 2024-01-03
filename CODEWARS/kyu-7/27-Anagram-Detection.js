@@ -9,20 +9,27 @@
 
 // "Buckethead" is an anagram of "DeathCubeK"
 
+// const isAnagram = (test, original) => {
+//   let counter = 0;
+
+//   const arrOriginal = original.toLowerCase().split("");
+
+//   const arrTest = test.toLowerCase().split("");
+
+//   for (let i = 0; i < arrTest.length; i++) {
+//     arrOriginal.includes(arrTest[i]) ? counter++ : null;
+//   }
+
+//   if (counter === arrTest.length) {
+//     return true;
+//   } else return false;
+// };
+
 const isAnagram = (test, original) => {
-  let counter = 0;
+  let testArr = test.toLowerCase().split("").sort().join("");
+  let originalArr = original.toLowerCase().split("").sort().join("");
 
-  const arrOriginal = original.toLowerCase().split("");
-
-  const arrTest = test.toLowerCase().split("");
-
-  for (let i = 0; i < arrTest.length; i++) {
-    arrOriginal.includes(arrTest[i]) ? counter++ : null;
-  }
-
-  if (counter === arrTest.length) {
-    return true;
-  } else return false;
+  return testArr === originalArr;
 };
 
-console.log(isAnagram("toffee", "foefet"));
+console.log(isAnagram("apple", "pale"));
