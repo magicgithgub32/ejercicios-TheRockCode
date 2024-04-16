@@ -5,17 +5,27 @@
 // expandedForm(70304); // Should return '70000 + 300 + 4'
 
 function expandedForm(num) {
-  var numStr = String(num);
-  var length = numStr.length;
-  var expanded = [];
+  let numStr = String(num);
+  let length = numStr.length;
+  let expanded = [];
 
-  for (var i = 0; i < length; i++) {
-    var digit = numStr.charAt(i);
+  for (let i = 0; i < length; i++) {
+    let digit = numStr.charAt(i);
     if (digit !== "0") {
-      var zeros = "0".repeat(length - i - 1);
+      let zeros = "0".repeat(length - i - 1);
       expanded.push(digit + zeros);
     }
   }
 
   return expanded.join(" + ");
 }
+
+console.log(expandedForm(70304));
+
+// const expandedForm = n => n.toString()
+//                             .split("")
+//                             .reverse()
+//                             .map( (a, i) => a * Math.pow(10, i))
+//                             .filter(a => a > 0)
+//                             .reverse()
+//                             .join(" + ");
