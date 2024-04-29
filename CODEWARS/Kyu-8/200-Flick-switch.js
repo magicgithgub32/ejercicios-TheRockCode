@@ -14,22 +14,13 @@
 // Switch the boolean value on the same element as the flick itself.
 
 function flickSwitch(arr) {
-  let result = [];
-
-  for (let i = 0; i < arr.length; i++) {
-    result.push(true);
-
-    if (arr[i] === "flick") {
-      let newArr = result.slice(arr[i], arr.length);
-      result = result.slice(0, arr[i]);
-
-      for (let i = 0; i < newArr.length; i++) {
-        result.push(!result[i]);
-      }
+  let on = true;
+  return arr.map((item) => {
+    if (item === "flick") {
+      on = !on;
     }
-  }
-
-  return result;
+    return on;
+  });
 }
 
 console.log(flickSwitch(["codewars", "flick", "code", "wars"]));
